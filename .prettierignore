@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+**/node_modules
+package-lock.json
+package.json
+
+# Build outputs
+dist
+build
+coverage
+.next
+
+# Large generated files
+*.min.js
+*.bundle.js
+*.config.js
+
+# Other files you rarely edit
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.ico
