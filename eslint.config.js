@@ -1,21 +1,36 @@
-import { defineConfig, globalIgnores } from 'eslint/config'
-import globals from 'globals'
+import js from "@eslint/js";
+import globals from "globals";
+import pluginReact from "eslint-plugin-react";
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(['node_modules', 'dist', 'build']),
   {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    files: ["**/*.{js,mjs,cjs,jsx}"],
     languageOptions: {
-      globals: globals.browser,
-      parserOptions: { ecmaVersion: 'latest', sourceType: 'module', ecmaFeatures: { jsx: true } },
+      parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true, 
+        },
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
-    plugins: ['react', 'react-hooks'],
-    extends: [
-      'eslint:recommended',
-      'plugin:react/recommended',
-      'plugin:react-hooks/recommended',
-      'prettier'
-    ],
-    settings: { react: { version: 'detect' } },
+    plugins: {
+      js,
+      react: pluginReact,
+    },
+    rules: {
+      ...pluginReact.configs.flat.recommended.rules,
+      "react/prop-types": "off",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   },
-])
+]);

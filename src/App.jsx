@@ -1,10 +1,12 @@
-import "./styles/App.css";
-import ProductCard from "./components/ProductCard";
+import React from 'react';
+import GlobalStyle from './styles/GlobalStyles';
+import Home from './pages/Home';
 
 function App() {
   return (
     <>
-      <ProductCard />
+      <GlobalStyle />
+      <Home />
     </>
   );
 }
