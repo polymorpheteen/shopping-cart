@@ -11,7 +11,7 @@ const StarsWrapper = styled.div`
 `;
 
 export default function StarRating({ rating, maxRating = 5 }) {
-  const filledColor = '#3a3a3c';
+  const filledColor = '#2c3e50';
   const emptyColor = '#bbb';
 
   const stars = [];

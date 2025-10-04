@@ -1,22 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import MerriweatherItalic from '../assets/font/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf';
-import MerriweatherRegular from '../assets/font/Merriweather-VariableFont_opsz,wdth,wght.ttf';
 
 const GlobalStyle = createGlobalStyle`
-    @font-face {
-        font-family: 'Merriweather';
-        src: url(${MerriweatherRegular}) format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'Merriweather';
-        src: url(${MerriweatherItalic}) format('truetype');
-        font-weight: normal;
-        font-style: italic;
-    }
-
     *, *::before, *::after {
     box-sizing: border-box;
     }
@@ -45,11 +29,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        font-family: 'Lato', sans-serif;
+        font-family: 'Andika', sans-serif;
     }
 
-    h1, h2, h3 {
-        font-family: 'Merriweather', sans-serif;
+    h1, h2, h3, h4 {
+        font-family: "Noto Sans", sans-serif;
     }
 
     p, h1, h2, h3, h4, h5, h6 {
