@@ -27,7 +27,7 @@ const FeaturedItems = ({ products }) => {
       <Title>Featured Items</Title>
       <ProductGrid>
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} hideAddtoCart />
         ))}
       </ProductGrid>
     </Section>

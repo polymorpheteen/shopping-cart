@@ -73,7 +73,7 @@ const AddButton = styled.button`
   }
 `;
 
-function ProductCard({ product }) {
+function ProductCard({ product, hideAddtoCart }) {
   const { addToCart } = useCart();
   return (
     <Card>
@@ -87,16 +87,19 @@ function ProductCard({ product }) {
         }).format(product.price)}
       </ProductPrice>
       <StarRating rating={product.rating?.rate || 0} />
-      <ButtonWrapper>
-        <AddButton onClick={() => addToCart(product)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path
-              fill="#2c3e50"
-              d="M12 13a5 5 0 0 1-5-5h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2a5 5 0 0 1-5 5m0-10a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3m7 3h-2a5 5 0 0 0-5-5a5 5 0 0 0-5 5H5c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"
-            />
-          </svg>
-        </AddButton>
-      </ButtonWrapper>
+
+      {!hideAddtoCart && (
+        <ButtonWrapper>
+          <AddButton onClick={() => addToCart(product)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path
+                fill="#2c3e50"
+                d="M12 13a5 5 0 0 1-5-5h2a3 3 0 0 0 3 3a3 3 0 0 0 3-3h2a5 5 0 0 1-5 5m0-10a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3m7 3h-2a5 5 0 0 0-5-5a5 5 0 0 0-5 5H5c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"
+              />
+            </svg>
+          </AddButton>
+        </ButtonWrapper>
+      )}
     </Card>
   );
 }

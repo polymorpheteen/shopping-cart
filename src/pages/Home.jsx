@@ -11,7 +11,6 @@ export default function Home() {
     fetch('https://fakestoreapi.com/products?limit=4')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProducts(data);
       });
   }, []);

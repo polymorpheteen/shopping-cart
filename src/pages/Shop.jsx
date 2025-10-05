@@ -52,7 +52,6 @@ export default function Shop() {
     fetch('https://fakestoreapi.com/products?limit=12')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProducts(data);
       });
   }, []);
